@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rh-devspace-multiple-sync-poc
+  name: rh-devspace-multiple-sync-poc
+spec:
+  selector:
+    matchLabels:
+      app: rh-devspace-multiple-sync-poc
+  template:
+    metadata:
+      labels:
+        app: rh-devspace-multiple-sync-poc
+    spec:
+      containers:
+        - name: foo
+          image: busybox
+          command:
+            - sleep
+            - "300"
+        - name: bar
+          image: busybox
+          command:
+            - sleep
+            - "300"

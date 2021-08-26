@@ -1,0 +1,18 @@
+version: v1beta10
+deployments:
+  - name: dev
+    kubectl:
+      manifests:
+        - deployment.yaml
+dev:
+  sync:
+    - labelSelector:
+        app: rh-devspace-multiple-sync-poc
+      containerName: foo
+      localSubPath: src
+      containerPath: /tmp/sync
+    - labelSelector:
+        app: rh-devspace-multiple-sync-poc
+      containerName: bar
+      localSubPath: src
+      containerPath: /tmp/sync
