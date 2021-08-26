@@ -11,8 +11,12 @@ dev:
       containerName: foo
       localSubPath: src
       containerPath: /tmp/sync
+      excludePaths:
+        - bar
     - labelSelector:
         app: rh-devspace-multiple-sync-poc
       containerName: bar
       localSubPath: src
       containerPath: /tmp/sync
+      excludePaths:
+        - foo
